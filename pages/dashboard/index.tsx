@@ -47,6 +47,7 @@ const Dashboard: NextPage = () => {
                                         src={`https://cdn.discordapp.com/icons/${g.id}/${g.icon}?size=32`}
                                         borderRadius="full"
                                         fallbackSrc="plain.png"
+                                        alt="Server Icon"
                                     />
                                     &nbsp;{g.name}
                                 </Button>
@@ -67,6 +68,7 @@ const Dashboard: NextPage = () => {
                                         src={`https://cdn.discordapp.com/icons/${g.id}/${g.icon}?size=32`}
                                         borderRadius="full"
                                         fallbackSrc="plain.png"
+                                        alt="Server Icon"
                                     />
                                     &nbsp; Invite me to {g.name}!
                                 </Button>

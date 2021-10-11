@@ -8,7 +8,7 @@ const Support: NextPage = () => {
     }, [])
 
     return (
-        <u><a href="https://discord.gg/STe9YQgtz2">Didn't get redirected? Click this text. </a></u>
+        <u><a href="https://discord.gg/STe9YQgtz2">Didn&apos;t get redirected? Click this text. </a></u>
     )
 }
 

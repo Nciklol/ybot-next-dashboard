@@ -39,7 +39,7 @@ const DashboardPage: NextPage = () => {
                 setLoading(false);
             }).catch(() => router.push("/api/discord/auth"));
         }
-    }, [router.isReady])
+    },[router.isReady, router])
 
     while (loading) {
         return <Loading />;
