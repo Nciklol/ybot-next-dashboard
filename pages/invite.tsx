@@ -8,6 +8,7 @@ const Invite: NextPage = () => {
 
     <Head>
         <title>Invite • YBot</title>
+        <meta property="og:title" content="Invite YBot" data-react-helmet="true" />
     </Head>
 
     useEffect(() => {
