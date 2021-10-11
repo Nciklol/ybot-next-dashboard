@@ -6,6 +6,7 @@ import Loading from "../../components/Loading";
 
 import type { NextPage } from "next";
 import { Button, Stack, Center, Image, Link } from "@chakra-ui/react";
+import { useRouter } from 'next/router';
 
 interface Guild {
     id: string;
@@ -23,13 +24,14 @@ interface Response {
 const Dashboard: NextPage = () => {
     const [guilds, setGuilds] = useState<Response>();
     const [loading, setLoading] = useState(true);
+    const router = useRouter();
 
     useEffect(() => {
         axios.get<Response>("http://localhost:3000/api/discord/guilds", { withCredentials: true }).then(res => {
             setGuilds(res.data);
             setLoading(false);
-        }).catch(() => window.location.href = "http://localhost:3000/api/discord/auth");
-    }, [])
+        }).catch(() => router.push("/api/discord/auth"));
+    }, [router])
 
     while (loading) {
         return <Loading />
