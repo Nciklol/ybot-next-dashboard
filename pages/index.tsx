@@ -3,7 +3,6 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import Loading from "../components/Loading";
 import LoginButton from "../components/LoginButton";
-import Link from "next/link"
 import { Buttons, Features } from "../components/LandingPage";
 
 import type { NextPage } from "next";

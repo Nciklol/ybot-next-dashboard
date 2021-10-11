@@ -22,6 +22,8 @@ interface Response {
     rest: Guild[];
 }
 
+const baseURL = "https://discord.com/api/oauth2/authorize?client_id=480926911095111682&permissions=294498200822&scope=bot"
+
 const Dashboard: NextPage = () => {
     const [guilds, setGuilds] = useState<Response>();
     const [loading, setLoading] = useState(true);
@@ -68,7 +70,7 @@ const Dashboard: NextPage = () => {
                 guilds?.rest.map(g => ( 
                     <div key={g.id}>
                         <Center>
-                            <Link href={`/dashboard/${g.id}/`}>
+                            <Link href={`${baseURL}&guild_id=${g.id}`}>
                                 <Button>
                                     <Image 
                                         src={`https://cdn.discordapp.com/icons/${g.id}/${g.icon}?size=32`}
