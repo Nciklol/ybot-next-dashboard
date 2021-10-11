@@ -1,5 +1,6 @@
 import { Button, Link, Stack } from "@chakra-ui/react";
 import { NextPage } from "next";
+import ReactTypingEffect from "react-typing-effect";
 
 export const Buttons: NextPage<{spacing: number}> = ({ spacing }) => {
     return (
@@ -16,11 +17,12 @@ export const Buttons: NextPage<{spacing: number}> = ({ spacing }) => {
                 </Button>
             </Link>
 
-            <Link href="/features">
-                <Button size="lg">
-                    View Features
-                </Button>
-            </Link>
+            <Button size="lg" onClick={e => {
+                e.preventDefault();
+                alert("Coming soon..")
+            }}>
+                View Features
+            </Button>
 
             <Link href="/support">
                 <Button size="lg">
@@ -28,5 +30,40 @@ export const Buttons: NextPage<{spacing: number}> = ({ spacing }) => {
                 </Button>
             </Link>
         </Stack>
+    )
+}
+
+export const Features: NextPage<{ text: string[] }> = ({ text }) => {
+    return (
+        <>
+            <br /> <br />
+
+            <ReactTypingEffect
+                text={text}
+                speed={100}
+                eraseSpeed={75}
+
+                // ????? why is it erroring it works completely fine
+                // @ts-expect-error
+                
+                cursorRenderer={(cursor: Element) => <h1 style={{ fontSize: 32 }}>{cursor}</h1>}
+
+                displayTextRenderer={(text: string) => {
+                    return (
+                        <h1>
+                            {text.split('').map((char, i) => {
+                                const key = `${i}`;
+                                return (
+                                    <span
+                                        key={key}
+                                        style={{ fontSize: 32 }}
+                                    >{char}</span>
+                                );
+                            })}
+                        </h1>
+                    );
+                }}
+            />
+        </>
     )
 }

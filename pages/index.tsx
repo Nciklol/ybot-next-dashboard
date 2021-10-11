@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Loading from "../components/Loading";
 import LoginButton from "../components/LoginButton";
 import Link from "next/link"
-import { Buttons } from "../components/LandingPage";
+import { Buttons, Features } from "../components/LandingPage";
 
 import type { NextPage } from "next";
 import Head from "next/head";
@@ -64,6 +64,10 @@ const Home: NextPage = () => {
                 <Buttons spacing={3} />
             </Center>
 
+            <Center>
+                <Features text={["Advanced Moderation System", "Customizable Economy System", "Advanced Logging System", "Active Development",
+                "Responsive Feedback", "Simple To Use", "Customizable Embeds","And much more..."]}/>
+            </Center>
 
         </div>
     )
