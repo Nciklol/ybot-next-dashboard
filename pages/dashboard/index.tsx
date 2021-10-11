@@ -27,7 +27,7 @@ const Dashboard: NextPage = () => {
     const router = useRouter();
 
     useEffect(() => {
-        axios.get<Response>("http://localhost:3000/api/discord/guilds", { withCredentials: true }).then(res => {
+        axios.get<Response>("https://ybotdiscord.tech/api/discord/guilds", { withCredentials: true }).then(res => {
             setGuilds(res.data);
             setLoading(false);
         }).catch(() => router.push("/api/discord/auth"));

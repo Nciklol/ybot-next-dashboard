@@ -34,7 +34,7 @@ const DashboardPage: NextPage = () => {
 
     useEffect(() => {
         if (router.isReady) {
-            axios.get<GuildInfo>(`http://localhost:3000/api/discord/guilds/${router.query.id}`, { withCredentials: true }).then(res => {
+            axios.get<GuildInfo>(`https://ybotdiscord.tech/api/discord/guilds/${router.query.id}`, { withCredentials: true }).then(res => {
                 setEco(res.data.eco);
                 setLoading(false);
             }).catch(() => router.push("/api/discord/auth"));
@@ -49,14 +49,14 @@ const DashboardPage: NextPage = () => {
         <div>
             <Button onClick={async () => {
                 if (eco === 1) {
-                    axios.post(`http://localhost:3000/api/discord/guilds/${router.query.id}/config`, {
+                    axios.post(`https://ybotdiscord.tech/api/discord/guilds/${router.query.id}/config`, {
                         eco: 0
                     }, { withCredentials: true })
                         .then(() => {
                             setEco(0);
                         }).catch((e) => router.push("/api/discord/auth"));
                 } else if (eco === 0) {
-                    axios.post(`http://localhost:3000/api/discord/guilds/${router.query.id}/config`, {
+                    axios.post(`https://ybotdiscord.tech/api/discord/guilds/${router.query.id}/config`, {
                         eco: 1
                     }, { withCredentials: true })
                     .then(() => {
