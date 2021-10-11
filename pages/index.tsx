@@ -7,6 +7,7 @@ import Link from "next/link"
 import { Buttons } from "../components/LandingPage";
 
 import type { NextPage } from "next";
+import Head from "next/head";
 
 export interface User {
     id: string;
@@ -33,6 +34,10 @@ const Home: NextPage = () => {
 
     return (
         <div>
+            <Head>
+                <title>Home • YBot</title>
+            </Head>
+
             <LoginButton user={user} />
             <Stack spacing={4}>
                 <Center paddingTop="75px">

@@ -7,6 +7,7 @@ import Loading from "../../components/Loading";
 import type { NextPage } from "next";
 import { Button, Stack, Center, Image, Link } from "@chakra-ui/react";
 import { useRouter } from 'next/router';
+import Head from 'next/head';
 
 interface Guild {
     id: string;
@@ -39,6 +40,9 @@ const Dashboard: NextPage = () => {
 
     return (
         <div>
+            <Head>
+                <title>Dashboard • YBot</title>
+            </Head>
             {
                 guilds?.mutualGuilds.map(g => (
                     <div key={g.id}>

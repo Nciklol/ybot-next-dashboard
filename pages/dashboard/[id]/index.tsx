@@ -5,7 +5,6 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import Loading from "../../../components/Loading";
 import Head from "next/head"
-import { getURL } from "next/dist/shared/lib/utils";
 
 interface GuildInfo {
     serverID: string,
@@ -47,6 +46,9 @@ const DashboardPage: NextPage = () => {
 
     return (
         <div>
+            <Head>
+                <title>Dashboard • YBot</title>
+            </Head>
             <Button onClick={async () => {
                 if (eco === 1) {
                     axios.post(`https://ybotdiscord.tech/api/discord/guilds/${router.query.id}/config`, {
