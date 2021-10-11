@@ -4,7 +4,6 @@ import type { AppProps } from 'next/app'
 import { ChakraProvider } from "@chakra-ui/react"
 import theme from '../theme'
 import React from 'react'
-import { getURL } from '../utils/utils'
 import Head from 'next/head'
 
 function YBotDashboard({ Component, pageProps }: AppProps) {
@@ -17,6 +16,8 @@ function YBotDashboard({ Component, pageProps }: AppProps) {
 
                 <meta property="og:title" content="YBot Dashboard" data-react-helmet="true" />
                 <meta property="og:description" content="Upgrade your discord server today by inviting YBot!" data-react-helmet="true" />
+            
+                <link rel="shortcut icon" href="ybot.ico" />
             </Head>
 
             <Component {...pageProps} />
