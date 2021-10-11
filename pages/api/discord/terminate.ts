@@ -18,5 +18,5 @@ export default async function handler (
         path: "/"
     }))
 
-    res.redirect("http://localhost:3000/")
+    res.redirect("https://ybotdiscord.tech")
 }
