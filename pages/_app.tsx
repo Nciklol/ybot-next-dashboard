@@ -16,8 +16,6 @@ function YBotDashboard({ Component, pageProps }: AppProps) {
 
                 <meta property="og:title" content="YBot Dashboard" data-react-helmet="true" />
                 <meta property="og:description" content="Upgrade your discord server today by inviting YBot!" data-react-helmet="true" />
-            
-                <link rel="shortcut icon" href="ybot.ico" />
             </Head>
 
             <Component {...pageProps} />
