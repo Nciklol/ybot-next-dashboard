@@ -36,7 +36,7 @@ const DashboardPage: NextPage = () => {
             axios.get<GuildInfo>(`https://ybotdiscord.tech/api/discord/guilds/${router.query.id}`, { withCredentials: true }).then(res => {
                 setEco(res.data.eco);
                 setLoading(false);
-            }).catch(() => router.push("/api/discord/auth"));
+            }).catch(() => router.push("/dashboard"));
         }
     },[router.isReady, router])
 
