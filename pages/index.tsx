@@ -20,7 +20,7 @@ const Home: NextPage = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        axios.get<User>("https://ybotdiscord.tech/api/discord/user", { withCredentials: true }).then(res => {
+        axios.get<User>("http://localhost:3000/api/discord/user", { withCredentials: true }).then(res => {
             setUser(res?.data || null)
             setLoading(false);
         }).catch(() => setLoading(false));

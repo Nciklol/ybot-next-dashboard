@@ -15,6 +15,14 @@ a {
     box-sizing: border-box;
 }
 
+.dropdown {
+    display: none;
+}
+
+.markdown a {
+    text-decoration: underline;
+}
+
 .b-container {
     width: 60px;
     flex-direction: row;
