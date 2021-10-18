@@ -11,6 +11,17 @@ interface Guild {
     permissions: string;
 }
 
+interface Role {
+    id: string;
+    name: string;
+    color: number;
+    positon: number;
+    tags?: {
+        bot_id?: string;
+    }
+}
+
+
 export default async function handler(
     req: NextApiRequest,
     res: NextApiResponse
@@ -32,8 +43,20 @@ export default async function handler(
 
     if (!doc2) return res.status(500).json({ error: "No guild document found with this ID" });
 
+    const roles = await axios.get<Role[]>(`https://discord.com/api/v9/guilds/${guildID}/roles`, {
+        headers: {
+            "Authorization": `Bot ${process.env.BOT_TOKEN}`
+        }
+    }).catch(() => { });
+
+    if (!roles) {
+        return res.status(500).json({error: "I don't have permissions to manage roles!"})
+    }
+
     doc2['_id'] = null;
     doc2['__v'] = null;
 
-    return res.status(200).json(doc2);
+    const botRole = roles.data.find(r => r.tags?.bot_id == process.env.CLIENT_ID);
+
+    return res.status(200).json({settings: doc2, roles: roles.data, botRole});
 }

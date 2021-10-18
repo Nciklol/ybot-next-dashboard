@@ -26,18 +26,14 @@ const Home: NextPage = () => {
         }).catch(() => setLoading(false));
 
     }, [])
-
-    while (loading) {
-        return <Loading />
-    }
-
+    
     return (
         <div>
             <Head>
                 <title>Home • YBot</title>
             </Head>
 
-            <LoginButton user={user} />
+            <LoginButton user={user} loading={loading} />
             <Stack spacing={4}>
                 <Center paddingTop="75px">
                     <Text as="b" fontSize="45">The most advanced discord bot to date.</Text>

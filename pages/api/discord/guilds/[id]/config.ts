@@ -37,6 +37,9 @@ export default async function handler(
             if (req.body[prop] !== 0 && req.body[prop] !== 1) return res.status(400).json({ error: "pls don't hit my api, kind of rude" });
             doc2[prop] = req.body[prop];
             doc2.markModified(`${prop}`);
+        } else if (prop === "muteRole") {
+            doc2[prop] = req.body[prop];
+            doc2.markModified(`${prop}`);
         }
     }
 

@@ -16,6 +16,7 @@
     "@types/react-typing-effect": "^2.0.2",
     "axios": "^0.22.0",
     "cookie": "^0.4.1",
+    "formik": "^2.2.9",
     "framer-motion": "^4",
     "ioredis": "^4.27.9",
     "mongoose": "^6.0.9",
