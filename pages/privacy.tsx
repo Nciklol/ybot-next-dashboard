@@ -22,3 +22,5 @@ const PrivacyPolicy: NextPage = () => {
         </div>
     )
 }
+
+export default PrivacyPolicy

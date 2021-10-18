@@ -29,6 +29,12 @@ export const Buttons: NextPage<{spacing: number}> = ({ spacing }) => {
                     Support
                 </Button>
             </Link>
+
+            <Link href="/privacy">
+                <Button size="lg">
+                    View Privacy Policy
+                </Button>
+            </Link>
         </Stack>
     )
 }
