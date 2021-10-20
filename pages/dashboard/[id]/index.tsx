@@ -94,6 +94,7 @@ const DashboardPage: NextPage = () => {
             </Button>
             <br /><br /><br />
             <Text fontSize="lg" as="b">Change mute role: </Text>
+
             <Formik
                 initialValues={{ muteRole }}
                 onSubmit={(selected) => {
@@ -105,9 +106,8 @@ const DashboardPage: NextPage = () => {
                 }}
             >
                 {
-                    props => (
-                        
-                        <form onSubmit={props.handleSubmit} className="dropdown">
+                    props => { return (
+                        <form onSubmit={props.handleSubmit} >
                             <Select onChange={props.handleChange} variant="outline" size="md" width="25%" name="muteRole" defaultValue={roles?.find(r => r.id === muteRole)?.id || "Invalid"}>
                                 {
                                     roles?.sort((r, r2) => r2.position - r.position).map(role => (
@@ -117,7 +117,7 @@ const DashboardPage: NextPage = () => {
                             </Select>
                             <Button type="submit">Update Role</Button>
                         </form>
-                    )   
+                    )   }
                 }
 
             </Formik>
