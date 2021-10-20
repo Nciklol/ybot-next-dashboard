@@ -31,6 +31,7 @@ const Home: NextPage = () => {
         <div>
             <Head>
                 <title>Home • YBot</title>
+                <meta property="og:title" content="YBot Dashboard" data-react-helmet="true" />
             </Head>
 
             <LoginButton user={user} loading={loading} />

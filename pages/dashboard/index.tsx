@@ -44,6 +44,7 @@ const Dashboard: NextPage = () => {
         <div>
             <Head>
                 <title>Dashboard • YBot</title>
+                <meta property="og:title" content="YBot Dashboard" data-react-helmet="true" />
             </Head>
             {
                 guilds?.mutualGuilds.map(g => (

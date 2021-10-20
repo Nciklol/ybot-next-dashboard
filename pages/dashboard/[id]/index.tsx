@@ -70,6 +70,7 @@ const DashboardPage: NextPage = () => {
         <div>
             <Head>
                 <title>Dashboard • YBot</title>
+                <meta property="og:title" content="YBot Dashboard" data-react-helmet="true" />
             </Head>
             <Text fontSize="lg" as="b">Economy Commands:   </Text>
             <Button onClick={async () => {
