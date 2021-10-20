@@ -4,7 +4,7 @@ import { randomBytes } from "crypto";
 
 const prodURL = "https://discord.com/api/oauth2/authorize?client_id=480926911095111682&redirect_uri=https%3A%2F%2Fybotdiscord.tech%2Fapi%2Fdiscord%2Fredirect&response_type=code&scope=guilds%20identify";
 const devURL = "https://discord.com/api/oauth2/authorize?client_id=480926911095111682&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fdiscord%2Fredirect&response_type=code&scope=identify%20guilds"
-const baseURL = devURL;
+const baseURL = prodURL;
 export default function handler(
     req: NextApiRequest,
     res: NextApiResponse
