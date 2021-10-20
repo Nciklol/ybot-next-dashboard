@@ -9,6 +9,8 @@ import Head from 'next/head'
 function YBotDashboard({ Component, pageProps }: AppProps) {
     return (
         <ChakraProvider theme={theme}>
+            <Component {...pageProps} />    
+
             <Head>
                 <meta property="og:type" content="website" />
                 <meta property="og:url" content="https://ybotdiscord.tech" data-react-helmet="true"/>
@@ -19,8 +21,6 @@ function YBotDashboard({ Component, pageProps }: AppProps) {
             
                 <link rel="shortcut icon" href="ybot.ico" />
             </Head>
-
-            <Component {...pageProps} />    
         </ChakraProvider>
     )
 }
