@@ -11,7 +11,7 @@ function YBotDashboard({ Component, pageProps }: AppProps) {
         <ChakraProvider theme={theme}>
             <Head>
                 <meta property="og:type" content="website" />
-                <meta property="og:url" content="http://localhost:3000" data-react-helmet="true"/>
+                <meta property="og:url" content="https://ybotdiscord.tech" data-react-helmet="true"/>
                 <meta property="og:image" content="https://cdn.discordapp.com/avatars/480926911095111682/cc078ff74139880df2a096998a93dfb4.png?size=180px" data-react-helmet="true" />
 
                 <meta property="og:title" content="YBot Dashboard" data-react-helmet="true" />

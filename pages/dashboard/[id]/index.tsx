@@ -53,7 +53,7 @@ const DashboardPage: NextPage = () => {
 
     useEffect(() => {
         if (router.isReady) {
-            axios.get<IResponse>(`http://localhost:3000/api/discord/guilds/${router.query.id}`, { withCredentials: true }).then(res => {
+            axios.get<IResponse>(`https://ybotdiscord.tech/api/discord/guilds/${router.query.id}`, { withCredentials: true }).then(res => {
                 setEco(res.data.settings.eco);
                 setRoles(res.data.roles.filter(r => r.position < res.data.botRole.position));
                 setMuteRole(res.data.settings.muteRole)
@@ -74,14 +74,14 @@ const DashboardPage: NextPage = () => {
             <Text fontSize="lg" as="b">Economy Commands:   </Text>
             <Button onClick={async () => {
                 if (eco === 1) {
-                    axios.post(`http://localhost:3000/api/discord/guilds/${router.query.id}/config`, {
+                    axios.post(`https://ybotdiscord.tech/api/discord/guilds/${router.query.id}/config`, {
                         eco: 0
                     }, { withCredentials: true })
                         .then(() => {
                             setEco(0);
                         }).catch((e) => router.push("/api/discord/auth"));
                 } else if (eco === 0) {
-                    axios.post(`http://localhost:3000/api/discord/guilds/${router.query.id}/config`, {
+                    axios.post(`https://ybotdiscord.tech/api/discord/guilds/${router.query.id}/config`, {
                         eco: 1
                     }, { withCredentials: true })
                     .then(() => {
@@ -98,7 +98,7 @@ const DashboardPage: NextPage = () => {
                 onSubmit={(selected) => {
                     if (selected.muteRole === muteRole) return;
 
-                    axios.post(`http://localhost:3000/api/discord/guilds/${router.query.id}/config`, {
+                    axios.post(`https://ybotdiscord.tech/api/discord/guilds/${router.query.id}/config`, {
                         muteRole: selected.muteRole
                     }, { withCredentials: true })
                 }}

@@ -45,7 +45,7 @@ export default async function handler(
 		"client_id": process.env.CLIENT_ID as string,
 		"client_secret": process.env.CLIENT_SECRET as string,
 		"grant_type": "authorization_code",
-		"redirect_uri": "http://localhost:3000/api/discord/redirect",
+		"redirect_uri": "https://ybotdiscord.tech/api/discord/redirect",
 		code
 	}
 
@@ -88,5 +88,5 @@ export default async function handler(
         })
     ])
     
-    return res.redirect("http://localhost:3000/dashboard");
+    return res.redirect("https://ybotdiscord.tech/dashboard");
 }
