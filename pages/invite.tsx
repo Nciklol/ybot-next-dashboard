@@ -1,7 +1,7 @@
 import { NextPage } from "next";
 import Head from "next/head";
 
-const baseURL = "https://discord.com/api/oauth2/authorize?client_id=480926911095111682&permissions=294498200822&scope=bot"
+const baseURL = "https://discord.com/api/oauth2/authorize?client_id=480926911095111682&permissions=395429931254&scope=bot%20applications.commands"
 
 const Invite: NextPage = () => {
     return (
