@@ -38,7 +38,7 @@ export default async function handler(
 
     const ids = botGuilds.data.map(g => g.id);
 
-    const usableGuilds = userGuilds.data.filter(g => (Number(g.permissions) & 1 << 5) === 1 << 5);
+    const usableGuilds = userGuilds.data.filter(g => (BigInt(g.permissions) & BigInt(1 << 5)) === BigInt(1 << 5));
     const mutualGuilds = usableGuilds.filter(g => ids.includes(g.id));
 
     doc.guilds = mutualGuilds;

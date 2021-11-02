@@ -43,7 +43,7 @@ const Home: NextPage = () => {
                 <Center>
                     <Image
                         alt="YBot's profile picture"
-                        src="https://cdn.discordapp.com/avatars/480926911095111682/cc078ff74139880df2a096998a93dfb4.png?size=180px"
+                        src="https://cdn.discordapp.com/avatars/480926911095111682/611effcfd421a9c708cbc9f0f83e094e.png"
                         boxSize="180px"
                         borderRadius="full"
                     />
