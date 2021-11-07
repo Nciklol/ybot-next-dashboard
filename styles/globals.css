@@ -1,77 +1,75 @@
 html,
 body {
-    padding: 15;
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-        Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  padding: 15;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 a {
-    color: inherit;
-    text-decoration: none;
+  color: inherit;
+  text-decoration: none;
 }
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .dropdown {
-    display: none;
+  display: none;
 }
 
 .markdown a {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 .b-container {
-    width: 60px;
-    flex-direction: row;
-    /* Center Stuff */
-
+  width: 60px;
+  flex-direction: row;
+  /* Center Stuff */
 }
 
 .test {
-    width: 80%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  width: 80%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .center {
-    height: 100vh;
-    margin: 0 auto;
-    align-self: center;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  height: 100vh;
+  margin: 0 auto;
+  align-self: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .b-container .ball {
-    background-color: #fff;
-    border-radius: 50%;
-    display: block;
-    width: 15px;
-    height: 15px;
-    animation: jump 0.7s ease-in-out infinite;
+  background-color: #fff;
+  border-radius: 50%;
+  display: block;
+  width: 15px;
+  height: 15px;
+  animation: jump 0.7s ease-in-out infinite;
 }
 
 .b-container .ball:nth-child(2) {
-    animation-delay: 0.15s;
+  animation-delay: 0.15s;
 }
 
 .b-container .ball:nth-child(3) {
-    animation-delay: 0.3s;
+  animation-delay: 0.3s;
 }
 
 @keyframes jump {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
 
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-20px);
-    }
+  50% {
+    transform: translateY(-20px);
+  }
 }
