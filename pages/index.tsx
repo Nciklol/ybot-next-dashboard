@@ -1,13 +1,12 @@
-import { Center, Text, Image, Stack } from "@chakra-ui/react";
+import { Center, Text, Image } from "@chakra-ui/react";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import Loading from "../components/Loading";
-import LoginButton from "../components/LoginButton";
 import { Buttons, Features } from "../components/LandingPage";
 import "tailwindcss/tailwind.css";
 import type { NextPage } from "next";
 import Head from "next/head";
 import Contributors from "../react-contributors";
+import Link from "next/link";
 // Username of the repo owner.
 const owner = "Nciklol";
 
@@ -49,14 +48,18 @@ const Home: NextPage = () => {
       </Head>
       <nav className="relative flex flex-wrap items-center content-between py-3 px-4  bg-transparent">
         <div className="transition duration-500 ease-in-out  hover: transform hover:-translate-y-1 hover:scale-150 ...">
-          <img src="/purpleY.svg" width="60" height="60" />
+          <Image src="/purpleY.svg" width="60" height="60" alt="YBot profile picture"/>
         </div>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <div className="nav-item dropdown text-right">
           <div className="dropdown-divider" />
-          <a className="dropdown-item" href="/dashboard">
-            Dashboard
-          </a>
+
+          <div className="dropdown-item">
+              <Link href="/dashboard">
+                  Dashboard
+              </Link>
+          </div>
+
           <div className="dropdown-divider" />
           <a className="dropdown-item" href="https://example.com">
             Documentation
